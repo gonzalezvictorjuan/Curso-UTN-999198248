@@ -8,4 +8,6 @@
 
 - [📝 Clase 01 - Nivelacion Javascript](./Clase-01/Clase-01-Nivelacion-Javascript.md)
 
+- [📝 Clase 02 - Nivelacion de React](./Clase-02/Clase-02-Niveladora-React.md)
+
 > Agregaré más enlaces a medida que se creen nuevas clases.
