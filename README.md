@@ -14,5 +14,6 @@
 - [📝 Clase 04 - Clases, Propiedades y Objetos](./Clase-04/Clase-04-Clases-Propiedades-Objetos.md)
 - [📝 Clase 05 - Aplicacion Practica en Typescript](./Clase-05/Clase-05-Aplicacion-Practica-Typescript.md)
 - [📝 Clase 06 - Preparando entorno](./Clase-06/Clase-06-Preparando-entorno.md)
+- [📝 Clase 06 - Introduccion a Bases Datos](./Clase-06/Clase-06-Introduccion-Bases-Datos.md)
 
 > Agregaré más enlaces a medida que se creen nuevas clases.
