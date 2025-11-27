@@ -17,5 +17,8 @@
 - [📝 Clase 06 - Introduccion a Bases Datos](./Clase-06/Clase-06-Introduccion-Bases-Datos.md)
 - [📝 Clase 07 - Modelado de datos](./Clase-07/Clase-07-Modelado-de-datos.md)
 - [📝 Clase 07 - Consultas SQL](./Clase-07/Clase-07-Consultas-SQL.md)
+- [📝 Clase 08 - MySQL Clases Practica Refuerzo](./Clase-08/Clase-8-MySQL-clases-practica-refuerzo.md)
+- [📝 Clase 08 - SQL Avanzado](./Clase-08/Clase-08-SQL-Avanzado.md)
+- [📝 Clase 08 - Ejercicios MySql Completos](./Clase-08/ejercicios_mysql_completos.md)
 
 > Agregaré más enlaces a medida que se creen nuevas clases.
