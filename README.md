@@ -20,5 +20,7 @@
 - [📝 Clase 08 - MySQL Clases Practica Refuerzo](./Clase-08/Clase-8-MySQL-clases-practica-refuerzo.md)
 - [📝 Clase 08 - SQL Avanzado](./Clase-08/Clase-08-SQL-Avanzado.md)
 - [📝 Clase 08 - Ejercicios MySql Completos](./Clase-08/ejercicios_mysql_completos.md)
+- [📝 Clase 09 - No Relacionales: MongoDB](./Clase-09/Clase-09-No-Relacionales-MongoDB.md)
+- [📝 Clase 09 - SQL vs NoSQL](./Clase-09/SQL_NoSQL.md)
 
 > Agregaré más enlaces a medida que se creen nuevas clases.
