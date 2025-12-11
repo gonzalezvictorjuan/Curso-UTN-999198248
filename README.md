@@ -23,5 +23,6 @@
 - [📝 Clase 09 - No Relacionales: MongoDB](./Clase-09/Clase-09-No-Relacionales-MongoDB.md)
 - [📝 Clase 09 - SQL vs NoSQL](./Clase-09/SQL_NoSQL.md)
 - [📝 Clase 10 - Intro Mongo](./Clase-10/Clase-10-Intro-Mongo.md)
+- [📝 Clase 11 - MongoDB Colecciones y Registros](./Clase-11/Clase-11-MongoDB-Colecciones-y-Registros.md)
 
 > Agregaré más enlaces a medida que se creen nuevas clases.
