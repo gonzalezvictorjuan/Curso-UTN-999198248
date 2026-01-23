@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-
-import { ICategory } from '../types/categories';
 import * as categoriesService from '../services/categories.service';
+import { CreateCategoryDTO, UpdateCategoryDTO } from '../types/categories';
+import { validationResult } from 'express-validator';
 
 // getAll()
 export const getAll = async (_req: Request, res: Response) => {
@@ -32,7 +32,16 @@ export const getById = async (req: Request, res: Response) => {
 // create()
 export const create = async (req: Request, res: Response) => {
   try {
-    const categoryData: ICategory = req.body;
+    const errors = validationResult(req);
+    console.log('Errores de validación:', errors.array());
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const categoryData: CreateCategoryDTO = req.body;
+
+    console.log('Datos recibidos para crear categoría:', categoryData);
+
     const newCategory = await categoriesService.createCategory(categoryData);
     return res.status(201).json(newCategory);
   } catch (error) {
@@ -45,10 +54,15 @@ export const update = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
 
-    const categoryData: ICategory = req.body;
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const categoryData: UpdateCategoryDTO = req.body;
     const updatedCategory = await categoriesService.updateCategory(
       id,
-      categoryData
+      categoryData,
     );
 
     if (!updatedCategory) {

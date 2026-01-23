@@ -11,6 +11,9 @@ export const register = async (req: Request, res: Response) => {
     }
 
     const { username, email, password } = req.body;
+
+    console.log('Registering user:', username, email, password);
+
     await authService.register(username, email, password);
 
     return res.status(201).json({ message: 'Usuario creado exitosamente' });
@@ -18,6 +21,8 @@ export const register = async (req: Request, res: Response) => {
     if (error.code === 'ER_DUP_ENTRY') {
       return res.status(409).json({ error: 'El usuario o email ya existe' });
     }
+
+    console.log('Error during registration:', error);
     return res.status(500).json({ error: 'Error al registrar el usuario' });
   }
 };

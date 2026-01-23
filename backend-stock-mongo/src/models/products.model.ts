@@ -17,7 +17,11 @@ const productSchema = new Schema<IProduct>(
     description: { type: String, required: false, trim: true },
     price: { type: Number, required: true, min: 0 },
     stock: { type: Number, required: true, min: 0 },
-    categoryId: { type: Schema.Types.ObjectId, required: true },
+    categoryId: {
+      type: Schema.Types.ObjectId,
+      ref: 'Category',
+      required: true,
+    },
   },
   { timestamps: true },
 );
@@ -26,7 +30,3 @@ productSchema.index({ name: 1 });
 productSchema.index({ categoryId: 1 });
 
 export const Product = mongoose.model<IProduct>('Product', productSchema);
-
-// al momento de usar el modelo Product en otros archivos,
-// puedo usar el populate para traer los datos de la categoría asociada a cada producto, por ejemplo:
-// Product.find().populate('categoryId', 'name');

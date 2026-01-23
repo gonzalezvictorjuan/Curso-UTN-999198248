@@ -1,6 +1,14 @@
-export interface ICategory {
+export interface CreateCategoryDTO {
   name: string;
-  description?: string; // ? Campo opcional
-  createdAt?: Date;
-  updatedAt?: Date;
+  description?: string;
+}
+
+export interface UpdateCategoryDTO extends Partial<CreateCategoryDTO> {}
+
+export interface CategoryResponseDTO {
+  id: string;
+  name: string;
+  description?: string;
+  createdAt: Date;
+  updatedAt: Date;
 }

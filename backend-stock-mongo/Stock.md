@@ -44,7 +44,7 @@ curl http://localhost:3000/api/categoria
 
 curl http://localhost:3000/api/categoria/6969868862b4bef89b9e671a
 
-curl -X POST http://localhost:3000/api/categoria -H "Content-Type: application/json" -d '{"name": "Nueva Categoria"}'
+curl -X POST http://localhost:3000/api/categoria -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NzJiYTg2MmQxN2I0NzIxYTRmOGY2ZiIsInVzZXJuYW1lIjoicGVwZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2OTEyNzA1NSwiZXhwIjoxNzY5MjEzNDU1LCJpc3MiOiJjdXJzby11dG4tYmFja2VuZCJ9.gDwZ1hCprw4uv5zbLpNGKCqTbYL3ZX0cWcZ_s_Uzkz8" -d '{"name": "Nueva Categoria"}'
 
 curl -X PUT http://localhost:3000/api/categoria/6969868862b4bef89b9e671a -H "Content-Type: application/json" -d '{"name": "Categoria Actualizada"}'
 
@@ -63,3 +63,15 @@ curl -X POST http://localhost:3000/api/producto -H "Content-Type: application/js
 curl -X PUT http://localhost:3000/api/producto/69701df701c30afa1a593cf2 -H "Content-Type: application/json" -d '{"name":"Producto Actualizado"}'
 
 curl -X DELETE http://localhost:3000/api/producto/69701df701c30afa1a593cf2
+
+curl -X POST http://localhost:3000/auth/register -H "Content-Type: application/json" -d '{"email":"user@example.com", "password":"Password123!", "username":"testuser"}'
+
+curl -X POST http://localhost:3000/auth/login -H "Content-Type: application/json" -d '{"email": "pepe@example.com", "password":"Password123!"}'
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NzJiYTg2MmQxN2I0NzIxYTRmOGY2ZiIsInVzZXJuYW1lIjoicGVwZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2OTEyNzA1NSwiZXhwIjoxNzY5MjEzNDU1LCJpc3MiOiJjdXJzby11dG4tYmFja2VuZCJ9.gDwZ1hCprw4uv5zbLpNGKCqTbYL3ZX0cWcZ_s_Uzkz8
+
+curl -X POST http://localhost:3000/api/producto -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NzJiYTg2MmQxN2I0NzIxYTRmOGY2ZiIsInVzZXJuYW1lIjoicGVwZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2OTEyNzA1NSwiZXhwIjoxNzY5MjEzNDU1LCJpc3MiOiJjdXJzby11dG4tYmFja2VuZCJ9.gDwZ1hCprw4uv5zbLpNGKCqTbYL3ZX0cWcZ_s_Uzkz8" -d '{"name":"Producto Ejemplo", "description":"Descripción", "price":999.99, "stock":1, "categoryId":"696986dd62b4bef89b9e6720"}'
+
+curl -X PUT http://localhost:3000/api/producto/6972bccb2d17b4721a4f8f76 -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NzJiYTg2MmQxN2I0NzIxYTRmOGY2ZiIsInVzZXJuYW1lIjoicGVwZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2OTEyNzA1NSwiZXhwIjoxNzY5MjEzNDU1LCJpc3MiOiJjdXJzby11dG4tYmFja2VuZCJ9.gDwZ1hCprw4uv5zbLpNGKCqTbYL3ZX0cWcZ_s_Uzkz8" -d '{"name":"Producto Actualizado de pepe", "description":"Descripción actualizada", "price":1099.99, "stock":2, "categoryId":"696986dd62b4bef89b9e6720"}'
+
+curl -X DELETE http://localhost:3000/api/producto/6972bccb2d17b4721a4f8f76 -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NzJiYTg2MmQxN2I0NzIxYTRmOGY2ZiIsInVzZXJuYW1lIjoicGVwZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2OTEyNzA1NSwiZXhwIjoxNzY5MjEzNDU1LCJpc3MiOiJjdXJzby11dG4tYmFja2VuZCJ9.gDwZ1hCprw4uv5zbLpNGKCqTbYL3ZX0cWcZ_s_Uzkz8"

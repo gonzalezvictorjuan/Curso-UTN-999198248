@@ -1,27 +1,32 @@
 // Manage Logic for Categories
-
-import { ICategory } from '../types/categories';
 import { Category } from '../models/categories.model';
+import {
+  CategoryResponseDTO,
+  CreateCategoryDTO,
+  UpdateCategoryDTO,
+} from '../types/categories';
 
-export const getAllCategory = async (): Promise<ICategory[]> => {
+export const getAllCategory = async (): Promise<CategoryResponseDTO[]> => {
   return await Category.find(); // trae todas las categorías de la base de datos
 };
 
 export const getCategoryById = async (
-  id: string
-): Promise<ICategory | null> => {
+  id: string,
+): Promise<CategoryResponseDTO | null> => {
   return await Category.findById(id);
 };
 
-export const createCategory = async (data: ICategory): Promise<ICategory> => {
+export const createCategory = async (
+  data: CreateCategoryDTO,
+): Promise<CategoryResponseDTO> => {
   const newCategory = new Category(data);
   return await newCategory.save();
 };
 
 export const updateCategory = async (
   id: string,
-  data: ICategory
-): Promise<ICategory | null> => {
+  data: UpdateCategoryDTO,
+): Promise<CategoryResponseDTO | null> => {
   const category = Category.findByIdAndUpdate(id, data, {
     new: true, // para que me devuelva el objeto actualizado
   }); // si mongo no encuentra un doc con ese id, devuelve null
@@ -29,6 +34,8 @@ export const updateCategory = async (
   return category;
 };
 
-export const removeCategory = async (id: string): Promise<ICategory | null> => {
+export const removeCategory = async (
+  id: string,
+): Promise<CategoryResponseDTO | null> => {
   return await Category.findByIdAndDelete(id);
 };
