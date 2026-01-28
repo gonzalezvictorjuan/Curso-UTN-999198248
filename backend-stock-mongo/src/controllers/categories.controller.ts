@@ -32,13 +32,9 @@ export const getById = async (req: Request, res: Response) => {
 // create()
 export const create = async (req: Request, res: Response) => {
   try {
-    const errors = validationResult(req);
-    console.log('Errores de validación:', errors.array());
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-
     const categoryData: CreateCategoryDTO = req.body;
+
+    console.log('categoryData', categoryData);
 
     console.log('Datos recibidos para crear categoría:', categoryData);
 
@@ -53,11 +49,6 @@ export const create = async (req: Request, res: Response) => {
 export const update = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
-
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
 
     const categoryData: UpdateCategoryDTO = req.body;
     const updatedCategory = await categoriesService.updateCategory(

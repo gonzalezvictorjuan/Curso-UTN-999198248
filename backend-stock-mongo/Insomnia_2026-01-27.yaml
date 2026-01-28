@@ -1,0 +1,438 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Imported Workspace
+meta:
+  id: wrk_d778bbc4102343f190b59cb0d2e4f6f3
+  created: 1769284677552
+  modified: 1769284677552
+  description: ""
+collection:
+  - name: Auth
+    meta:
+      id: fld_6867405c56c3423486fef0e47a06e4e0
+      created: 1769284992784
+      modified: 1769284992784
+      sortKey: -1769284992784
+      description: ""
+    children:
+      - url: "{{ base_url }}/auth/login"
+        name: Login
+        meta:
+          id: req_0cd9ce69fcb44bdbbee26b9769a95c36
+          created: 1769284992786
+          modified: 1769285141532
+          isPrivate: false
+          description: ""
+          sortKey: -1769284992786
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "pepe@example.com",
+            	"password": "Password123!"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/auth/register"
+        name: Register
+        meta:
+          id: req_dbc70c1faddb42aab2787e5cbef60bb5
+          created: 1769284992790
+          modified: 1769284992790
+          isPrivate: false
+          description: ""
+          sortKey: -1769284992790
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"username": "admin",
+            	"email": "admin@example.com",
+            	"password": "password123",
+            	"role": "admin"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Categories
+    meta:
+      id: fld_fc1c854508c6485fa99809805d2ff795
+      created: 1769284992790
+      modified: 1769284992790
+      sortKey: -1769284992790
+      description: ""
+    children:
+      - url: "{{ base_url }}/api/categoria"
+        name: Get All Categories
+        meta:
+          id: req_0f92995aedca498fae4c18c219c77097
+          created: 1769284992791
+          modified: 1769284992791
+          isPrivate: false
+          description: ""
+          sortKey: -1769284992791
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/api/categoria/:id"
+        name: Get Category By ID
+        meta:
+          id: req_e08d307757914822aaaa3d33de97fab7
+          created: 1769284992792
+          modified: 1769284992792
+          isPrivate: false
+          description: ""
+          sortKey: -1769284992792
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/api/categoria/:id"
+        name: Update Category (Admin)
+        meta:
+          id: req_9d5ed5ac6fde4a41869ed3133b2d6e78
+          created: 1769284992793
+          modified: 1769284992793
+          isPrivate: false
+          description: ""
+          sortKey: -1769284992793
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Electronics Updated"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: token
+            value: "{% response 'body', 'req_0cd9ce69fcb44bdbbee26b9769a95c36',
+              'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/api/categoria"
+        name: Create Category (Admin)
+        meta:
+          id: req_ae3d01efcd474cfaa50fa651acbbcbaf
+          created: 1769284992793
+          modified: 1769286214630
+          isPrivate: false
+          description: ""
+          sortKey: -1769284992793
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "E",
+            	"description": "Category for electronic stuff",
+            	"elefante": "rojo"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: authorization
+            value: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/api/categoria/6975304eeaf33b665d70c67f"
+        name: Delete Category (Admin)
+        meta:
+          id: req_ed87111c70b0414c92d37052a8a013d4
+          created: 1769284992794
+          modified: 1769558096788
+          isPrivate: false
+          description: ""
+          sortKey: -1769284992794
+        method: DELETE
+        headers:
+          - name: authorization
+            value: "{{ _.token }}"
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Products
+    meta:
+      id: fld_17b7aca25040450c849e1bbead151c0a
+      created: 1769284992795
+      modified: 1769284992795
+      sortKey: -1769284992795
+      description: ""
+    children:
+      - url: "{{ base_url }}/api/producto"
+        name: Get All Products
+        meta:
+          id: req_54fdc0b83b14475d8ca99187562cc546
+          created: 1769284992796
+          modified: 1769284992796
+          isPrivate: false
+          description: ""
+          sortKey: -1769284992796
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/api/producto"
+        name: Create Product (Admin)
+        meta:
+          id: req_543f95f5d76049608fdc7f7dcbd70504
+          created: 1769284992797
+          modified: 1769286081648
+          isPrivate: false
+          description: ""
+          sortKey: -1769284992798
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Smartphone",
+            	"price": 500,
+            	"stock": 10,
+            	"categoryId": "696986dd62b4bef89b9e6720"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: "{{ _.token }}"
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/api/producto/:id"
+        name: Get Product By ID
+        meta:
+          id: req_918d595f98024293976a26f771a4e787
+          created: 1769284992797
+          modified: 1769284992797
+          isPrivate: false
+          description: ""
+          sortKey: -1769284992797
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/api/producto/:id"
+        name: Update Product (Admin)
+        meta:
+          id: req_fdbf0f1bbadb4cd19781a537913ccf76
+          created: 1769284992798
+          modified: 1769284992798
+          isPrivate: false
+          description: ""
+          sortKey: -1769284992798
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name": "Smartphone Updated",
+            	"price": 600
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: token
+            value: "{% response 'body', 'req_0cd9ce69fcb44bdbbee26b9769a95c36',
+              'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/api/producto/:id"
+        name: Delete Product (Admin)
+        meta:
+          id: req_75e65a65b354489380d2eeb3f8350c47
+          created: 1769284992799
+          modified: 1769284992799
+          isPrivate: false
+          description: ""
+          sortKey: -1769284992799
+        method: DELETE
+        headers:
+          - name: token
+            value: "{% response 'body', 'req_0cd9ce69fcb44bdbbee26b9769a95c36',
+              'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Test Endpoints
+    meta:
+      id: fld_16ff9dc93e844576ae92d1c41c27a65c
+      created: 1769284992800
+      modified: 1769284992800
+      sortKey: -1769284992800
+      description: ""
+    children:
+      - url: "{{ base_url }}/public"
+        name: Public Route
+        meta:
+          id: req_f22e42f36ea143a1b727686355e9dc66
+          created: 1769284992800
+          modified: 1769284992800
+          isPrivate: false
+          description: ""
+          sortKey: -1769284992800
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/protected"
+        name: Protected Route
+        meta:
+          id: req_ead55642c1ea424d995ee79b2ae6ef41
+          created: 1769284992801
+          modified: 1769284992801
+          isPrivate: false
+          description: ""
+          sortKey: -1769284992801
+        method: GET
+        headers:
+          - name: token
+            value: "{% response 'body', 'req_0cd9ce69fcb44bdbbee26b9769a95c36',
+              'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/admin"
+        name: Admin Route
+        meta:
+          id: req_82bd0537f2fd4947b13e9dd7f9ee2519
+          created: 1769284992802
+          modified: 1769284992802
+          isPrivate: false
+          description: ""
+          sortKey: -1769284992802
+        method: GET
+        headers:
+          - name: token
+            value: "{% response 'body', 'req_0cd9ce69fcb44bdbbee26b9769a95c36',
+              'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ base_url }}/api/saludo"
+        name: API Saludo
+        meta:
+          id: req_2b5780a3a204446f86481948f9704bcd
+          created: 1769284992803
+          modified: 1769284992803
+          isPrivate: false
+          description: ""
+          sortKey: -1769284992803
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_327ddb3c520ec4b9bd46fc88a7a2f88233da4d4a
+    created: 1769284680014
+    modified: 1769284680014
+environments:
+  name: Base Environment
+  meta:
+    id: env_327ddb3c520ec4b9bd46fc88a7a2f88233da4d4a
+    created: 1769284677555
+    modified: 1769558014461
+    isPrivate: false
+  data:
+    base_url: http://localhost:3000
+    token: Bearer {% response 'body', 'req_0cd9ce69fcb44bdbbee26b9769a95c36',
+      'b64::JC50b2tlbg==::46b', 'never', 60 %}

@@ -1,5 +1,11 @@
-import mongoose, { Schema } from 'mongoose';
-import { ICategory } from '../types/categories';
+import mongoose, { Schema, Document } from 'mongoose';
+
+export interface ICategory extends Document {
+  name: string;
+  description?: string; // ? Campo opcional
+  createdAt: Date;
+  updatedAt: Date;
+}
 
 // Necesito definir el Schema
 const categorySchema = new Schema<ICategory>(
@@ -12,7 +18,7 @@ const categorySchema = new Schema<ICategory>(
     },
     description: { type: String, trim: true },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 // Definir el modelo

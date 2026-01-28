@@ -37,5 +37,7 @@
 - [📝 Clase 20 - Dominios, Hosting y Firebase](./Clase-20/Clase-20-Dominios-Hosting-Firebase.md)
 - Clase 21 - Sin documentos, avances sobre backend-stock-mongo.
 - Clase 22 - Sin documentos, avances sobre backend-stock-mongo.
+- [📝 Clase 23 - Introduccion a Servidores](./Clase-23/Clase-23-Introduccion-a-Servidores.md)
+- [📝 Clase 24 - Integrando Back y Front End](./Clase-24/Clase-24-Integrando-Back-y-Front-End.md)
 
 > Agregaré más enlaces a medida que se creen nuevas clases.

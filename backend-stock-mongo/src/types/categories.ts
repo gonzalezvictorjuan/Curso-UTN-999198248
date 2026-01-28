@@ -1,3 +1,5 @@
+// DTO: Data Transfer Objects
+
 export interface CreateCategoryDTO {
   name: string;
   description?: string;
