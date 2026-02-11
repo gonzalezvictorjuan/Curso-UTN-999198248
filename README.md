@@ -41,4 +41,5 @@
 - [📝 Clase 24 - Integrando Back y Front End](./Clase-24/Clase-24-Integrando-Back-y-Front-End.md)
 - [📝 Clase 26 - Introduccion al Prompt Engineering](./Clase-26/Clase-26-Introduccion-al-Prompt-Engineering.md)
 - [📝 Clase 27 - Prompt Engineering Ejemplos Practicos](./Clase-27/Clase-27-Prompt-Engineering-Ejemplos-Practicos.md)
+- [📝 Clase 28 - Preguntas de la clase](./Clase-28/preguntas.md)
 - [📝 Trabajo Practico Final](./tp-final.md)
